@@ -83,18 +83,18 @@ build a machine learning model to predict churn behavior, and gain actionable in
 - ✅ Model trained successfully with good accuracy.
 - ❌ No deployment or API used.
 
-This project **covers a complete end-to-end data analysis pipeline**, integrating SQL, BI, and ML — exactly what’s expected in real-world data analyst roles.
+This project **covers a complete end-to-end data analysis pipeline**, integrating SQL, Power BI, and ML — exactly what’s expected in real-world data analyst roles.
 
 ---
 
-├── SQL/
+├── SQL
 │ └── data_cleaning_queries.sql
-├── PowerBI/
+├── PowerB
 │ └── churn_analysis_dashboard.pbix
-├── Python/
+├── Python
 │ ├── churn_model.ipynb
 │ └── prediction_output.csv
-├── Data/
+├── Data
 │ ├── original_data.csv
 │ └── cleaned_data.xlsx
 └── README.md
