@@ -87,14 +87,15 @@ This project **covers a complete end-to-end data analysis pipeline**, integratin
 
 ---
 
-## 🚀 Future Enhancements (Optional)
-
-- Create Power BI dashboard to visualize ML predictions.
-- Use SHAP or LIME to interpret model predictions.
-- Automate full ETL process using Python scripts.
-- Deploy model with Flask or Streamlit.
-
----
-
-## 📁 Project Structure
+├── SQL/
+│ └── data_cleaning_queries.sql
+├── PowerBI/
+│ └── churn_analysis_dashboard.pbix
+├── Python/
+│ ├── churn_model.ipynb
+│ └── prediction_output.csv
+├── Data/
+│ ├── original_data.csv
+│ └── cleaned_data.xlsx
+└── README.md
 
