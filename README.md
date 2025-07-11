@@ -1,82 +1,100 @@
-# 💼 Churn Analysis Project (SQL + Power BI + Python)
+# 📊 Customer Churn Analysis Project (SQL + Power BI + Python)
 
-## 📌 Project Overview
+## 🧠 Project Objective
 
-This is a real-world, end-to-end **Churn Analysis Project** that demonstrates strong **data analysis and prediction** 
-capabilities using a combination of **SQL**, **Power BI**, **Excel**, and **Python (Random Forest)**. 
-It aims to uncover patterns behind customer churn and forecast which customers are likely to churn in the future.
-
----
-
-## 🧰 Tools Used
-
-- 🗃️ **SQL (MySQL)** – Data cleaning, transformation, filtering  
-- 📊 **Power BI** – Interactive dashboards and churn insight visualization  
-- 📁 **Excel** – Data movement between tools  
-- 🐍 **Python (scikit-learn)** – Machine learning with Random Forest  
-- 📈 **DAX** – Custom calculations and KPIs for advanced visuals  
+The objective of this project is to analyze telecom customer churn using a combination of **SQL**, 
+**Power BI**, and **Python**. The aim is to identify key reasons for churn, 
+build a machine learning model to predict churn behavior, and gain actionable insights to reduce future churn.
 
 ---
 
-## 📂 Workflow Summary
+## 🛠️ Tools & Technologies Used
 
-### 🔹 1. Data Cleaning & Preparation (SQL)
-
-- Imported raw churn data into **MySQL**
-- Cleaned missing/blank values (e.g., replaced blank cells with `"No"`)
-- Performed EDA and transformations (e.g., removed unnecessary columns)
-- Exported clean SQL data to **Power BI**, then used it for Python
-
----
-
-### 🔹 2. Dashboard Creation (Power BI)
-
-- Connected Sql-cleaned data to **Power BI**
-- Built a powerful **Churn Analysis Summary Dashboard**
-- Added reference tables for slicers like **Tenure**, **Age**, **Gender**
-- Used **DAX** to calculate churn rate, segment groups, and KPIs
-
-#### 🧠 Key Insights:
-
-- **Fiber Optic** internet users have a high churn rate: 41.1%
-- **Month-to-Month** contracts lead to highest churn (46.5%)
-- Highest churn rate is found among **Age > 65** group (39.8%)
-- **Jammu & Kashmir** shows the highest churn rate by region (57.2%)
-- Payment by **Mailed Check** churns more than Credit Card
+| Tool/Technology     | Purpose                                      |
+|---------------------|----------------------------------------------|
+| **MySQL (SQL)**     | Data Cleaning, Transformation, Filtering     |
+| **Power BI**        | Dashboarding, Data Visualization, DAX        |
+| **Python (Pandas, Sklearn)** | Machine Learning (Random Forest), Preprocessing |
+| **Excel/CSV**       | File Conversion, sql Connection         |
 
 ---
 
-### 🔹 3. Predictive Modeling (Python)
+## 🔄 End-to-End Workflow
 
-- Loaded clean data from Excel into **Google Colab**
-- Label Encoded categorical features (like Gender, Internet Type)
-- Dropped unnecessary fields (like `Customer_ID`, `Churn_Category`)
-- Built a **RandomForestClassifier** model:
-  - Achieved ~85% accuracy
-  - Evaluated with confusion matrix and classification report
-- Visualized **feature importance** using bar plot
+### ✅ 1. SQL Phase - Data Cleaning & Transformation
 
+- Loaded raw churn dataset into **MySQL**.
+- Cleaned null/blank values:
+  - Categorical columns: Replaced with `'No'`
+  - Numerical columns: Replaced with `0`
+- Applied appropriate data types.
+- Exported clean data to **Excel (.xlsx)** → then converted to **CSV** for ML use.
+- Created reference tables and filtered datasets for Power BI.
 
 ---
 
-## 📸 Dashboard Snapshot
+### ✅ 2. Power BI Phase - Dashboard Creation
 
-<img src="churn_analysis _dashboard.jpg" alt="Churn Dashboard Snapshot" width="100%">
+- Connected Power BI to cleaned Excel data.
+- Created a professional **interactive dashboard** showing:
+  - Churn by Gender, State, Contract Type, Services used
+  - KPIs: Total Customers, New Joiners, Churned Customers
+  - Churn rate analysis by demographics and service usage
+- Used DAX to create custom measures like:
+  - `Churn Rate %`
+  - `New Joiners`
+  - `Active Customers`
+
+#### 📸 Dashboard Snapshot
+
+![Churn Dashboard](churn_analysis_dashboard.jpg)
+
+---
+
+### ✅ 3. Python Phase - Machine Learning
+
+- **Label encoded** categorical features using `LabelEncoder`.
+- Filtered target column (`Customer_Status`) for binary classification (`Stayed`, `Churned`).
+- Built and trained a **Random Forest Classifier** on 80-20 train-test split.
+- Evaluated model using:
+  - Confusion Matrix
+  - Classification Report (Precision, Recall, F1-Score)
+- Predicted on new data using the trained model.
+- Saved the prediction results to a CSV file.
+
+---
+
+## 🧪 Model Evaluation
+
+| Metric            | Value       |
+|-------------------|-------------|
+| **Accuracy**      | ~85%        |
+| **Precision**     | 82% (for churned class) |
+| **Recall**        | 64% (for churned class) |
+| **F1-Score**      | 72%         |
+| **Model Used**    | RandomForestClassifier |
+
+---
+
+## 📝 Notes
+
+- ✅ ML predictions were made on new customer data and exported.
+- ❌ *No future prediction dashboard* was created.
+- ✅ Model trained successfully with good accuracy.
+- ❌ No deployment or API used.
+
+This project **covers a complete end-to-end data analysis pipeline**, integrating SQL, BI, and ML — exactly what’s expected in real-world data analyst roles.
+
+---
+
+## 🚀 Future Enhancements (Optional)
+
+- Create Power BI dashboard to visualize ML predictions.
+- Use SHAP or LIME to interpret model predictions.
+- Automate full ETL process using Python scripts.
+- Deploy model with Flask or Streamlit.
 
 ---
 
 ## 📁 Project Structure
 
-```bash
-Churn_Analysis_Project/
-├── SQL_Cleaning/
-│   └── cleaning_queries.sql
-├── PowerBI_Dashboard/
-│   └── churn_dashboard.pbix
-├── Python_Model/
-│   └── churn_random_forest.ipynb
-├── Data/
-│   ├── churn_cleaned.xlsx
-│   ├── churn_predictions.csv
-├── churn_analysis _dashboard.jpg
-└── README.md
