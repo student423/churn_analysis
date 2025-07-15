@@ -47,7 +47,7 @@ build a machine learning model to predict churn behavior, and gain actionable in
 
 #### 📸 Dashboard Snapshot
 
-![Churn Dashboard](https://github.com/student423/churn_analysis/blob/main/churn_analysis%20_dashboard.jpg)
+![Churn Dashboard](customer churn-dashboard.jpg)
 
 ---
 
